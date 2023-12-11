@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProductoApp1.Carrito"
+             Title="Carrito">
+    <VerticalStackLayout>
+        <ListView x:Name="MiCarritoList"
+      RowHeight="80">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="dotnet_bot.png"
+                           HeightRequest="70"
+                           WidthRequest="70"/>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding Nombre}"
+                               FontSize="25"
+                               WidthRequest="300"/>
+                                <Label Text="{Binding Cantidad}"
+                                 FontSize="20"/>
+                            </StackLayout>
+                            <Button Text="-"
+                                  FontSize="15"
+                                  Margin="5"
+                                  Clicked="DeleteProduct" />
+                           
+                        </StackLayout>
+                        
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+             <Button Text="Comprar"
+              FontSize="15"
+              Margin="5"
+              Clicked="OnClickComprar"/>
+
+    </VerticalStackLayout>
+</ContentPage>

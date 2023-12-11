@@ -1,0 +1,59 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProductoApp1.ListaProductos"
+             Title="Lista Productos">
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Tu contenido principal aquí -->
+
+            <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <!-- Otros elementos de la barra de herramientas -->
+
+                <Label Text="Lista Productos"
+                     FontSize="25"
+                     WidthRequest="300"/>
+                <!-- Botón en la parte inferior -->
+                <Button x:Name="CantidadCarrito" Text="-" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" Clicked="OnClickVerCarrito"/>
+            </StackLayout>
+        </Grid>
+    </NavigationPage.TitleView>
+             
+
+    <VerticalStackLayout>
+        <ListView x:Name="listaProductos"
+             RowHeight="80"
+             ItemSelected="OnClickShowDetails">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="dotnet_bot.png"
+                                  HeightRequest="70"
+                                  WidthRequest="70"/>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding Nombre}"
+                                      FontSize="25"
+                                      WidthRequest="300"/>
+                                <Label Text="{Binding Cantidad}"
+                                      FontSize="20"/>
+                            </StackLayout>
+                            <Button Text="+"
+                                    FontSize="15"
+                                    Margin="5"
+                                    Clicked="OnClickAddCard"/>
+                            <Button Text="-"
+                                    FontSize="15"
+                                    Margin="5"
+                                    Clicked="OnClickRestCard"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

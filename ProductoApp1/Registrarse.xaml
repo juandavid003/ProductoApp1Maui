@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProductoApp1.Registrarse"
+             Title="Registrarse">
+
+    <VerticalStackLayout>
+        <TableView >
+            <TableRoot>
+                <TableSection Title="Registrarse">
+                    <EntryCell x:Name="Nombre"
+                         Placeholder="Nombre"/>
+                    <EntryCell x:Name="Correo"
+                         Placeholder="Correo"/>
+                    <EntryCell x:Name="Contrasena"
+                         Placeholder="*********"/>
+
+
+                </TableSection>
+
+
+            </TableRoot>
+        </TableView>
+        <Button Text="Registrarse"
+     FontSize="15"
+     Margin="5"
+     Clicked="OnClickRegistrarse"/>
+    </VerticalStackLayout>
+</ContentPage>
